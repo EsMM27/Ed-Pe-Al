@@ -65,5 +65,3 @@ Step 4: undo CAESAR with the incrementing number (let’s say 4 here)
 "EGIK" becomes "ABCD"
 
 So after those 4 decryption steps "KFDI" is decrypted to "ABCD"
-
-zxczx
