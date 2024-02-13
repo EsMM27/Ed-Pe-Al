@@ -6,7 +6,9 @@ import java.util.List;
 
 public final class Enigma {
 
-    public static String Encrypt(String message, int incrementNumber,List<String> rotors ){
+    public static String Encrypt(String message, int incrementNumbers){
+        
+    
         // TODO - Implement the Encrypt method
         // Steps in brief
         // 1. Apply the CAESAR shift using the increment number
@@ -16,6 +18,19 @@ public final class Enigma {
 
         return "Implement the encrypt method";
     }
+
+    // public static String Encrypt(String message, int incrementNumber,List<String> rotors ){
+        
+        
+    //     // TODO - Implement the Encrypt method
+    //     // Steps in brief
+    //     // 1. Apply the CAESAR shift using the increment number
+    //     // 2. For each rotor in the list rotors
+    //     //  2.1 Translate the message using the rotor
+    //     // 3. Return the encrypted string
+
+    //     return "Implement the encrypt method";
+    // }
 
 
     public static String Decrypt(String message, int incrementNumber, List<String> rotors)
