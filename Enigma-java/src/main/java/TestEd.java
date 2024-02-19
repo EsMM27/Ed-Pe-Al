@@ -1,8 +1,9 @@
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TestEd {
 
-    public static String Encrypt(String message, int incrementNumbers){
+    public static String Ceaser(String message, int incrementNumbers){
         
         String s = "";
         int len = message.length();
@@ -29,7 +30,7 @@ public class TestEd {
         return s;
     }
 
-    //method to return the indexlist of a given String within the english alphabet
+    //method to return the indexlist of a given String within the alphabet
     public static int[] getIndexList(String s){
         int[] indexList = new int[s.length()];
         for(int i = 0; i < s.length(); i++){
@@ -38,14 +39,44 @@ public class TestEd {
         return indexList;
     }
 
+    public static String RotorShift(String message, List<String> rotors){
+        
+        String initial = Ceaser(message, 4);
+        String s = "";
+        String temp = "";
+        int len = initial.length();
+        int[] indexList = getIndexList(initial);
+
+        for(int i = 0; i < rotors.size()-1; i++){
+            System.out.println("Rotor: " + rotors.get(i));
+            for(int j = 0; j < len; j++){
+                s += rotors.get(i).charAt(indexList[j]);
+            }
+            System.out.println("s: " + s);
+            temp = s;
+            s = "";
+            indexList = getIndexList(temp);
+        }
+        return temp;
+    }
+
    
 
     public static void main(String []args){
 
-        System.out.println(Encrypt("ABCD", 4));  //prints def
-        System.out.println(Encrypt("ABCD",1));  //prints abc
+        // System.out.println(Encrypt("ABCD", 4));  //prints def
+        // System.out.println(Encrypt("ABCD",1));  //prints abc
 
-        System.out.println(Arrays.toString(getIndexList("EGIK")));
+        // System.out.println(Arrays.toString(getIndexList("EGIK")));
+
+        List<String> rotors = new ArrayList<String>();
+        rotors.add("BDFHJLCPRTXVZNYEIWGAKMUSQO");
+        rotors.add("AJDKSIRUXBLHWTMCQGZNPYFVOE");
+        rotors.add("EKMFLGDQVZNTOWYHXUSPAIBRCJ");
+
+        System.out.println(RotorShift("ABCD", rotors)); 
+
+        Ceaser("ABCD",4 );
         
         
 
