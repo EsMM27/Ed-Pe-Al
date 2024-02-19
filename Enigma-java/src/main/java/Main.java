@@ -2,6 +2,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.*;
 
+//ABCDEFGHIJKLMNOPQRSTUVWXYZ
+//BDFHJLCPRTXVZNYEIWGAKMUSQO
+//AJDKSIRUXBLHWTMCQGZNPYFVOE
+//EKMFLGDQVZNTOWYHXUSPAIBRCJ
+
 public class Main {
     public static void main(String[] args)
     {
@@ -18,6 +23,8 @@ public class Main {
 
         // ToDO
         // Get a start message, encrypt it and then decrypt it
+
+        
 
         String startMessage = "Hello world";
         String encryptedMessage = Enigma.Encrypt(startMessage, 4, rotors);
